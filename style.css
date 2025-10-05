@@ -329,3 +329,138 @@ nav ul li a:hover {
         font-size: 2rem;
     }
 }
+
+/* Responsive Design */
+
+/* Small devices (phones) */
+@media (max-width: 480px) {
+    .HeaderContent {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 15px 20px;
+    }
+
+    .HeaderContent h1 {
+        font-size: 1.5rem;
+    }
+
+    .HeaderContent img {
+        width: 35px;
+        height: 35px;
+        margin: 10px 0 0 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 0;
+    }
+
+    #Welcome h2, #About h1, #Contact h2 {
+        font-size: 1.5rem;
+    }
+
+    #Welcome p, #About p, #Contact p {
+        font-size: 0.9rem;
+    }
+
+    #Welcome button, #Contact button {
+        padding: 0.8em 1.5em;
+        font-size: 13px;
+    }
+
+    .Card-container div {
+        min-width: 180px;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .icon {
+        width: 120px;
+        height: 130px;
+        margin: 15px;
+    }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .HeaderContent {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 30px;
+    }
+
+    .HeaderContent h1 {
+        font-size: 2rem;
+    }
+
+    .HeaderContent img {
+        width: 50px;
+        height: 50px;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    #Welcome h2, #About h1, #Contact h2 {
+        font-size: 2rem;
+    }
+
+    #Welcome p, #About p, #Contact p {
+        font-size: 1rem;
+    }
+
+    #Welcome button, #Contact button {
+        padding: 1em 2em;
+        font-size: 14px;
+    }
+
+    .Card-container div {
+        min-width: 200px;
+        max-width: 250px;
+        padding: 25px;
+    }
+
+    .icon {
+        width: 140px;
+        height: 150px;
+        margin: 20px;
+    }
+}
+
+/* Large devices (PC) */
+@media (min-width: 1025px) {
+    /* Mostly default styles already handle large screens */
+    .HeaderContent h1 {
+        font-size: 2.5rem;
+    }
+
+    .HeaderContent img {
+        width: 70px;
+        height: 70px;
+    }
+
+    #Welcome h2, #About h1, #Contact h2 {
+        font-size: 2.5rem;
+    }
+
+    #Welcome p, #About p, #Contact p {
+        font-size: 1.1rem;
+    }
+
+    .Card-container div {
+        min-width: 220px;
+        max-width: 300px;
+        padding: 40px 20px;
+    }
+
+    .icon {
+        width: 170px;
+        height: 180px;
+        margin: 30px;
+    }
+}
+
+
