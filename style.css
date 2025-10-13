@@ -1,0 +1,463 @@
+/* ========================================
+   🔧 General Reset
+======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ========================================
+   🧭 Header
+======================================== */
+.HeaderContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.HeaderContent h1 {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 800;
+}
+
+.HeaderContent h1 .highlight {
+  color: #8b8c8e;
+}
+
+.HeaderContent img {
+  width: 70px;
+  height: 70px;
+  border-radius: 30%;
+  object-fit: cover;
+  margin-left: 15px;
+  transition: transform 0.3s ease;
+}
+
+.HeaderContent img:hover {
+  transform: scale(1.1);
+}
+
+/* ========================================
+   🧭 Navigation
+======================================== */
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #787879;
+  border-color: #5f6061;
+}
+
+/* ========================================
+   🧱 Main Layout
+======================================== */
+.Main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.Main section {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.Main section:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================================
+   👋 Welcome Section
+======================================== */
+#Welcome {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 60px;
+}
+
+#Welcome h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#Welcome p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Welcome Button */
+#Welcome button {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #525454;
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid #1f1f20;
+}
+
+#Welcome button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #1f1f20;
+  box-shadow: 4px 5px 17px -4px #525454;
+}
+
+#Welcome button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #525454;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+#Welcome button:hover::before {
+  width: 250%;
+}
+
+/* ========================================
+   📖 About Section
+======================================== */
+#About, #ServicePanel, #OurBackground, #Us {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 60px;
+}
+
+#About h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#About p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* ========================================
+   💼 Meet the Team (Us Section)
+======================================== */
+#Us h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 40px;
+  text-align: left;
+  padding-left: 40px;
+}
+
+/* Card Layout */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Card Structure */
+.card {
+  background: none;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 260px;
+  height: 370px;
+  transition: transform 0.9s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Card Sides */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 25px;
+}
+
+/* Front Side */
+.card-front {
+  background-color: #eeecec;
+  color: #333;
+  padding: 60px 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 60px;
+  transform: rotateY(0deg);
+}
+
+/* Back Side */
+.card-back {
+  background-color: #eceaea;
+  color: #000;
+  transform: rotateY(180deg);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Card Text */
+.card-front h2 {
+  font-size: 3rem;
+  color: #333;
+  margin-top: -10px; /* moved slightly down */
+  margin-left: -40;    /* center align with icon */
+  text-align: left;
+}
+
+.card-front h3 {
+  font-size: 1.1rem;
+  color: #000;
+  margin-top: 10px;  /* spacing below icon */
+  text-align: center;
+}
+
+/* Centered Icon Styling */
+.card-front .icon {
+  width: 170px;
+  height: 180px;
+  display: block;
+  margin: 20px auto 10px auto; /* centers icon horizontally */
+}
+
+/* ========================================
+   ✉️ Contact Section
+======================================== */
+#Contact {
+  background: linear-gradient(135deg, #c5c5c5, #dfdede);
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: 60px auto;
+}
+
+#Contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+#Contact p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+#Contact a {
+  color: #a6a3a3;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+#Contact a:hover {
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+#Contact button {
+  margin-top: 20px;
+  background-color: #a6a5a5;
+  color: #888585;
+  padding: 12px 35px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#Contact button:hover {
+  background-color: #ffffff;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* ========================================
+   ⚙️ Footer
+======================================== */
+.SiteFooter {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* ========================================
+   📱 Responsive Design
+======================================== */
+
+/* Small Devices (Phones) */
+@media (max-width: 480px) {
+  .HeaderContent {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 15px 20px;
+  }
+
+  .HeaderContent h1 {
+    font-size: 1.5rem;
+  }
+
+  .HeaderContent img {
+    width: 35px;
+    height: 35px;
+    margin-top: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #Welcome h2, #About h1, #Contact h2 {
+    font-size: 1.5rem;
+  }
+
+  #Welcome p, #About p, #Contact p {
+    font-size: 0.9rem;
+  }
+
+  .card-container div {
+    min-width: 180px;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .icon {
+    width: 120px;
+    height: 130px;
+    margin: 15px;
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .HeaderContent {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 30px;
+  }
+
+  .HeaderContent h1 {
+    font-size: 2rem;
+  }
+
+  .HeaderContent img {
+    width: 50px;
+    height: 50px;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  #Welcome h2, #About h1, #Contact h2 {
+    font-size: 2rem;
+  }
+
+  #Welcome p, #About p, #Contact p {
+    font-size: 1rem;
+  }
+
+  .card-container div {
+    min-width: 200px;
+    max-width: 250px;
+    padding: 25px;
+  }
+
+  .icon {
+    width: 140px;
+    height: 150px;
+    margin: 20px;
+  }
+}
+
+/* Large Devices (Desktop) */
+@media (min-width: 1025px) {
+  .HeaderContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .HeaderContent img {
+    width: 70px;
+    height: 70px;
+  }
+
+  #Welcome h2, #About h1, #Contact h2 {
+    font-size: 2.5rem;
+  }
+
+  .card-container div {
+    min-width: 220px;
+    max-width: 300px;
+    padding: 40px 20px;
+  }
+
+  .icon {
+    width: 170px;
+    height: 180px;
+    margin: 30px;
+  }
+}
